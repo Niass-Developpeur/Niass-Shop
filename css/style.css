@@ -1,0 +1,511 @@
+/* ==========================================================================
+   NIASS-SHOP — Feuille de style personnalisée
+   Charte graphique inspirée des tissus wax sénégalais :
+   indigo nuit, or impérial, rouge épice, fond crème.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..900;1,300..900&family=Manrope:wght@400..800&display=swap');
+
+:root{
+  /* --- Couleurs de marque --- */
+  --niass-navy:        #16233F;   /* indigo nuit — fond héro, texte fort   */
+  --niass-navy-light:  #24365C;
+  --niass-gold:        #D9A441;   /* or impérial — accents, prix           */
+  --niass-gold-dark:   #B8842A;
+  --niass-coral:       #B8432E;   /* rouge épice — CTA, promos             */
+  --niass-coral-dark:  #96331F;
+  --niass-cream:        #FAF5EC;  /* fond principal                        */
+  --niass-cream-deep:   #F0E4CC;  /* fond alterné des sections             */
+  --niass-ink:          #221D17;  /* texte                                 */
+  --niass-ink-soft:     #5B5346;  /* texte secondaire                      */
+  --niass-line:         #E4D8BE;  /* bordures discrètes                    */
+
+  /* --- Typographie --- */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+  /* --- Rayons / ombres --- */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --shadow-soft: 0 10px 30px rgba(22,35,63,0.09);
+  --shadow-card: 0 6px 18px rgba(22,35,63,0.08);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family: var(--font-body);
+  color: var(--niass-ink);
+  background-color: var(--niass-cream);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1,h2,h3,h4,.font-display{
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--niass-navy);
+  letter-spacing: -0.01em;
+}
+
+a{ color: var(--niass-navy); text-decoration: none; }
+a:hover{ color: var(--niass-coral); }
+
+.text-gold{ color: var(--niass-gold-dark) !important; }
+.text-coral{ color: var(--niass-coral) !important; }
+.bg-cream-deep{ background-color: var(--niass-cream-deep) !important; }
+.bg-navy{ background-color: var(--niass-navy) !important; }
+
+/* Focus clavier visible partout (accessibilité) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid var(--niass-gold);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Motif signature — "ruban wax"
+   Bande décorative géométrique inspirée des lisières de tissus imprimés,
+   utilisée comme séparateur de sections et comme accent de cartes.
+   ========================================================================== */
+.wax-strip{
+  height: 14px;
+  width: 100%;
+  background:
+    linear-gradient(135deg, var(--niass-gold) 25%, transparent 25%) 0 0/16px 16px,
+    linear-gradient(225deg, var(--niass-coral) 25%, transparent 25%) 0 0/16px 16px,
+    linear-gradient(315deg, var(--niass-gold) 25%, transparent 25%) 0 0/16px 16px,
+    linear-gradient(45deg,  var(--niass-coral) 25%, var(--niass-navy) 25%) 0 0/16px 16px;
+  background-color: var(--niass-navy);
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar-niass{
+  background-color: var(--niass-cream);
+  border-bottom: 1px solid var(--niass-line);
+}
+
+.brand-mark{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--niass-navy);
+}
+.brand-mark span{ color: var(--niass-coral); }
+
+.navbar-niass .nav-link{
+  font-weight: 600;
+  color: var(--niass-ink);
+  padding: .5rem .9rem;
+  position: relative;
+}
+.navbar-niass .nav-link.active,
+.navbar-niass .nav-link:hover{ color: var(--niass-coral); }
+
+.navbar-niass .nav-link.active::after{
+  content:"";
+  position:absolute;
+  left: .9rem; right:.9rem; bottom: 0;
+  height: 3px;
+  background: var(--niass-gold);
+  border-radius: 2px;
+}
+
+.search-form input{
+  border: 1px solid var(--niass-line);
+  background: #fff;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+.search-form button{
+  background: var(--niass-navy);
+  border: 1px solid var(--niass-navy);
+  color: #fff;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.search-form button:hover{ background: var(--niass-coral); border-color: var(--niass-coral); }
+
+.cart-icon-wrap{ position:relative; }
+.cart-badge{
+  position:absolute;
+  top:-6px; right:-10px;
+  background: var(--niass-coral);
+  color:#fff;
+  font-size: .68rem;
+  font-weight:700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0 4px;
+}
+
+/* ==========================================================================
+   Boutons
+   ========================================================================== */
+.btn-niass-primary{
+  background-color: var(--niass-coral);
+  border-color: var(--niass-coral);
+  color:#fff;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.btn-niass-primary:hover,
+.btn-niass-primary:focus{
+  background-color: var(--niass-coral-dark);
+  border-color: var(--niass-coral-dark);
+  color:#fff;
+}
+
+.btn-niass-outline{
+  border: 2px solid var(--niass-navy);
+  color: var(--niass-navy);
+  font-weight:700;
+  background: transparent;
+}
+.btn-niass-outline:hover{
+  background: var(--niass-navy);
+  color:#fff;
+}
+
+.btn-niass-gold{
+  background-color: var(--niass-gold);
+  border-color: var(--niass-gold);
+  color: var(--niass-navy);
+  font-weight:700;
+}
+.btn-niass-gold:hover{
+  background-color: var(--niass-gold-dark);
+  border-color: var(--niass-gold-dark);
+  color: var(--niass-navy);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero-niass{
+  background: radial-gradient(circle at 85% 20%, var(--niass-navy-light) 0%, var(--niass-navy) 55%);
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.hero-niass h1{
+  color:#fff;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height:1.08;
+}
+.hero-niass .eyebrow{
+  text-transform: uppercase;
+  letter-spacing:.18em;
+  font-size:.78rem;
+  font-weight:700;
+  color: var(--niass-gold);
+}
+.hero-niass .lead{ color: #E7E1D4; }
+
+/* Carousel */
+.carousel-niass .carousel-caption{
+  background: rgba(22,35,63,0.55);
+  border-radius: var(--radius-md);
+  bottom: 2rem;
+  padding: 1.2rem 1.6rem;
+}
+.carousel-niass .carousel-item img{
+  height: 60vh;
+  min-height: 340px;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+.carousel-niass .carousel-indicators [data-bs-target]{
+  background-color: var(--niass-gold);
+}
+
+/* ==========================================================================
+   Cartes catégories
+   ========================================================================== */
+.category-card{
+  position:relative;
+  border-radius: var(--radius-md);
+  overflow:hidden;
+  display:block;
+  box-shadow: var(--shadow-card);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.category-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+.category-card img{
+  width:100%; height: 240px; object-fit: cover;
+  transition: transform .4s ease;
+}
+.category-card:hover img{ transform: scale(1.06); }
+.category-card .category-label{
+  position:absolute; inset:auto 0 0 0;
+  background: linear-gradient(0deg, rgba(22,35,63,.88), rgba(22,35,63,0));
+  color:#fff;
+  padding: 2.2rem 1rem .9rem;
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:1.15rem;
+}
+
+/* ==========================================================================
+   Cartes produits
+   ========================================================================== */
+.product-card{
+  border: 1px solid var(--niass-line);
+  border-radius: var(--radius-md);
+  overflow:hidden;
+  background:#fff;
+  transition: transform .25s ease, box-shadow .25s ease;
+  height:100%;
+}
+.product-card:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-soft);
+}
+.product-card .product-img-wrap{
+  position:relative;
+  aspect-ratio: 3/4;
+  overflow:hidden;
+  background: var(--niass-cream-deep);
+}
+.product-card .product-img-wrap img{
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .5s ease;
+}
+.product-card:hover .product-img-wrap img{ transform: scale(1.08); }
+
+.product-card .badge-sale{
+  position:absolute; top:.6rem; left:.6rem;
+  background: var(--niass-coral);
+  color:#fff; font-weight:700; font-size:.7rem;
+  padding:.3rem .55rem; border-radius: var(--radius-sm);
+}
+.product-card .badge-new{
+  position:absolute; top:.6rem; left:.6rem;
+  background: var(--niass-gold);
+  color: var(--niass-navy); font-weight:700; font-size:.7rem;
+  padding:.3rem .55rem; border-radius: var(--radius-sm);
+}
+
+.product-card .btn-quick-add{
+  position:absolute; right:.6rem; bottom:.6rem;
+  width:38px; height:38px; border-radius:50%;
+  background: var(--niass-navy); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  border:none;
+  opacity:0; transform: translateY(6px);
+  transition: all .25s ease;
+}
+.product-card:hover .btn-quick-add{ opacity:1; transform:none; }
+.product-card .btn-quick-add:hover{ background: var(--niass-coral); }
+
+.product-card .product-body{ padding: .9rem 1rem 1.1rem; }
+.product-card .product-cat{
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+  color: var(--niass-ink-soft); font-weight:700;
+}
+.product-card .product-name{
+  font-family: var(--font-display);
+  font-weight:600; font-size:1.02rem; margin:.15rem 0 .35rem;
+  color: var(--niass-navy);
+}
+.product-card .price{
+  font-weight:800; color: var(--niass-coral); font-size:1.05rem;
+}
+.product-card .price-old{
+  color: var(--niass-ink-soft);
+  text-decoration: line-through;
+  font-size:.85rem;
+  font-weight:500;
+  margin-right:.4rem;
+}
+
+/* Étoiles avis (décoratif, statique) */
+.stars{ color: var(--niass-gold-dark); font-size:.8rem; letter-spacing:1px; }
+
+/* ==========================================================================
+   Filtres sidebar (catalogue)
+   ========================================================================== */
+.filter-panel{
+  background:#fff;
+  border:1px solid var(--niass-line);
+  border-radius: var(--radius-md);
+  padding: 1.3rem;
+}
+.filter-panel h6{
+  text-transform: uppercase; letter-spacing:.06em;
+  font-size:.78rem; font-weight:800; color: var(--niass-navy);
+  margin-bottom:.8rem;
+}
+.filter-panel .form-check{ margin-bottom:.45rem; }
+.filter-panel .form-check-input:checked{
+  background-color: var(--niass-coral);
+  border-color: var(--niass-coral);
+}
+
+/* ==========================================================================
+   Fiche produit
+   ========================================================================== */
+.pdp-thumb{
+  border:2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor:pointer;
+  overflow:hidden;
+}
+.pdp-thumb.active, .pdp-thumb:hover{ border-color: var(--niass-gold); }
+.pdp-thumb img{ width:100%; height:90px; object-fit:cover; }
+
+.pdp-main-img{
+  border-radius: var(--radius-md);
+  overflow:hidden;
+  background: var(--niass-cream-deep);
+  aspect-ratio: 4/5;
+  cursor: zoom-in;
+}
+.pdp-main-img img{
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .3s ease;
+}
+.pdp-main-img.zoomed img{ transform: scale(1.7); }
+
+.swatch{
+  width:34px; height:34px; border-radius:50%;
+  border:2px solid var(--niass-line);
+  display:inline-block; cursor:pointer;
+}
+.swatch.active{ border-color: var(--niass-navy); box-shadow: 0 0 0 2px #fff inset; }
+
+.size-option{
+  border:1px solid var(--niass-line);
+  border-radius: var(--radius-sm);
+  padding: .4rem .85rem;
+  cursor:pointer;
+  font-weight:700;
+  color: var(--niass-ink);
+  background:#fff;
+}
+.size-option.active, .size-option:hover{
+  border-color: var(--niass-navy);
+  background: var(--niass-navy);
+  color:#fff;
+}
+
+/* ==========================================================================
+   Panier
+   ========================================================================== */
+.cart-line{
+  border-bottom:1px solid var(--niass-line);
+  padding: 1.1rem 0;
+}
+.cart-line img{
+  width:84px; height:100px; object-fit:cover; border-radius: var(--radius-sm);
+}
+.qty-control{
+  display:inline-flex; align-items:center;
+  border:1px solid var(--niass-line); border-radius: var(--radius-sm);
+}
+.qty-control button{
+  width:30px; height:30px; border:none; background:#fff; font-weight:700;
+  color: var(--niass-navy);
+}
+.qty-control button:hover{ background: var(--niass-cream-deep); }
+.qty-control input{
+  width:38px; border:none; text-align:center; font-weight:700;
+}
+.summary-box{
+  background:#fff; border:1px solid var(--niass-line);
+  border-radius: var(--radius-md); padding:1.4rem;
+}
+
+/* ==========================================================================
+   Formulaires (contact / newsletter / auth)
+   ========================================================================== */
+.form-control:focus, .form-select:focus{
+  border-color: var(--niass-gold);
+  box-shadow: 0 0 0 .2rem rgba(217,164,65,.25);
+}
+.newsletter-box{
+  background: var(--niass-navy);
+  color:#fff;
+  border-radius: var(--radius-md);
+}
+.newsletter-box .form-control{ border-radius: var(--radius-sm); }
+
+.is-invalid-msg{ color: var(--niass-coral); font-size:.82rem; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer-niass{
+  background: var(--niass-navy);
+  color: #CBD1DE;
+}
+.footer-niass h6{
+  color:#fff; text-transform:uppercase; font-size:.78rem;
+  letter-spacing:.08em; font-weight:800; margin-bottom:1rem;
+}
+.footer-niass a{ color:#CBD1DE; }
+.footer-niass a:hover{ color: var(--niass-gold); }
+.social-icon{
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  display:inline-flex; align-items:center; justify-content:center;
+  color:#fff; margin-right:.5rem;
+}
+.social-icon:hover{ background: var(--niass-gold); border-color: var(--niass-gold); color: var(--niass-navy); }
+
+/* ==========================================================================
+   Animations légères (scroll reveal + hover)
+   ========================================================================== */
+.reveal{
+  opacity:0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.is-visible{ opacity:1; transform:none; }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+
+/* Toast succès panier */
+.toast-niass{
+  background: var(--niass-navy);
+  color:#fff;
+  border: none;
+}
+
+/* Breadcrumb */
+.breadcrumb-niass a{ color: var(--niass-ink-soft); font-weight:600; }
+.breadcrumb-niass .active{ color: var(--niass-coral); font-weight:700; }
+
+/* Pagination */
+.pagination .page-link{ color: var(--niass-navy); font-weight:700; }
+.pagination .page-item.active .page-link{
+  background-color: var(--niass-coral); border-color: var(--niass-coral);
+}
+
+/* Section titre avec accent */
+.section-title{
+  position:relative;
+  padding-bottom: .6rem;
+  margin-bottom: 1.6rem;
+}
+.section-title::after{
+  content:"";
+  position:absolute; left:0; bottom:0;
+  width:56px; height:4px;
+  background: var(--niass-gold);
+  border-radius:2px;
+}
+.section-title.mx-auto-line::after{ left:50%; transform:translateX(-50%); }
