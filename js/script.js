@@ -14,10 +14,10 @@ const NIASS_PRODUCTS = [
   { id: 4,  name: "Ensemble Enfant Baobab",  category: "enfant",  price: 12000, image: "https://placehold.co/600x800/D9A441/16233F?text=Ensemble+Enfant",               images: ["https://placehold.co/600x800/D9A441/16233F?text=Ensemble+Enfant","https://placehold.co/600x800/B8842A/16233F?text=Vue+2"], sizes:["2-4 ans","5-7 ans","8-10 ans"], colors:["#D9A441","#16233F"], badge:"", popularity: 65, rating:4.4, desc:"Ensemble deux pièces confortable pour enfant, tissu doux et résistant, parfait pour l'école ou les fêtes." },
   { id: 5,  name: "Sneakers Teranga",        category: "chaussures", price: 27000, oldPrice: 31000, image: "https://placehold.co/600x800/16233F/D9A441?text=Sneakers",                images: ["https://placehold.co/600x800/16233F/D9A441?text=Sneakers","https://placehold.co/600x800/24365C/D9A441?text=Vue+2"], sizes:["39","40","41","42","43","44"], colors:["#16233F","#FAF5EC"], badge:"promo", popularity: 95, rating:4.7, desc:"Sneakers unisexe légères et résistantes, semelle amortissante, pour un style urbain toute la journée." },
   { id: 6,  name: "Kaftan Homme Prestige",   category: "homme",   price: 35000, image: "https://placehold.co/600x800/24365C/FAF5EC?text=Kaftan",                        images: ["https://placehold.co/600x800/24365C/FAF5EC?text=Kaftan","https://placehold.co/600x800/16233F/FAF5EC?text=Vue+2"], sizes:["M","L","XL","XXL"], colors:["#24365C","#221D17"], badge:"", popularity: 71, rating:4.5, desc:"Kaftan brodé traditionnel revisité, tissu premium, coupe moderne pour un look élégant et intemporel." },
-  { id: 7,  name: "Jupe Ankara Moderne",     category: "femme",   price: 15000, image: "https://placehold.co/600x800/D9A441/221D17?text=Jupe+Ankara",                   images: ["https://placehold.co/600x800/D9A441/221D17?text=Jupe+Ankara","https://placehold.co/600x800/B8842A/221D17?text=Vue+2"], sizes:["S","M","L","XL"], colors:["#D9A441","#B8432E","#16233F"], badge:"new", popularity: 74, rating:4.2, desc:"Jupe taille haute en wax ankara, coupe crayon, idéale pour un look bureau chic et coloré." },
+  { id: 7,  name: "Jupe Ankara Moderne",     category: "femme",   price: 15000, image: "/assets/images/chaussures basket H.png",                   images: ["https://placehold.co/600x800/D9A441/221D17?text=Jupe+Ankara","https://placehold.co/600x800/B8842A/221D17?text=Vue+2"], sizes:["S","M","L","XL"], colors:["#D9A441","#B8432E","#16233F"], badge:"new", popularity: 74, rating:4.2, desc:"Jupe taille haute en wax ankara, coupe crayon, idéale pour un look bureau chic et coloré." },
   { id: 8,  name: "Sac Cabas Tissé",         category: "accessoires", price: 9500, image: "https://placehold.co/600x800/F0E4CC/16233F?text=Sac+Cabas",                    images: ["https://placehold.co/600x800/F0E4CC/16233F?text=Sac+Cabas","https://placehold.co/600x800/E4D8BE/16233F?text=Vue+2"], sizes:["Taille unique"], colors:["#F0E4CC","#B8432E"], badge:"", popularity: 58, rating:4.1, desc:"Sac cabas tissé à la main, spacieux et robuste, un accessoire authentique pour toutes vos sorties." },
-  { id: 9,  name: "Polo Casual Homme",       category: "homme",   price: 13500, image: "https://placehold.co/600x800/16233F/FAF5EC?text=Polo+Casual",                   images: ["https://placehold.co/600x800/16233F/FAF5EC?text=Polo+Casual","https://placehold.co/600x800/24365C/FAF5EC?text=Vue+2"], sizes:["S","M","L","XL"], colors:["#16233F","#B8432E","#F0E4CC"], badge:"", popularity: 66, rating:4.0, desc:"Polo en coton piqué, coupe régulière, un basique confortable pour toutes les journées." },
-  { id: 10, name: "Sandales Cuir Gorée",     category: "chaussures", price: 16000, image: "https://placehold.co/600x800/B8842A/16233F?text=Sandales+Cuir",               images: ["https://placehold.co/600x800/B8842A/16233F?text=Sandales+Cuir","https://placehold.co/600x800/D9A441/16233F?text=Vue+2"], sizes:["37","38","39","40","41","42"], colors:["#B8842A","#221D17"], badge:"", popularity: 60, rating:4.3, desc:"Sandales artisanales en cuir véritable, confortables et durables, fabriquées localement." },
+  { id: 9,  name: "T-Shirt Polyvalent Homme",       category: "homme",   price: 5000, image: "/assets/images/T-shirt H.png",                   images: ["/assets/images/T-shirt H.png","/assets/images/T-shirt H2.png"], sizes:["S","M","L","XL"], colors:["#16233F","#c6cbc8df"], badge:"", popularity: 66, rating:4.0, desc:"T-shirt en coton piqué, coupe régulière, un basique confortable pour toutes les journées." },
+  { id: 10, name: "Sandales Cuir Gorée", category: "chaussures", price: 16000, image: "/assets/images/chaussure1 (2).png", sizes: ["41", "42", "43", "44", "45"], colors: ["#F0E4CC", "#0e0e0e"], badge: "new", popularity: 78, rating: 4.3, desc:"chaussures de qualité." },
   { id: 11, name: "Robe Enfant Fleurie",     category: "enfant",  price: 11000, image: "https://placehold.co/600x800/B8432E/FAF5EC?text=Robe+Enfant",                   images: ["https://placehold.co/600x800/B8432E/FAF5EC?text=Robe+Enfant","https://placehold.co/600x800/96331F/FAF5EC?text=Vue+2"], sizes:["2-4 ans","5-7 ans","8-10 ans"], colors:["#B8432E","#D9A441"], badge:"new", popularity: 55, rating:4.5, desc:"Robe légère et joyeuse pour petite fille, tissu doux hypoallergénique, coupe confortable pour jouer toute la journée." },
   { id: 12, name: "Bijoux Perles Wolof",     category: "accessoires", price: 7000, image: "https://placehold.co/600x800/D9A441/16233F?text=Bijoux",                       images: ["https://placehold.co/600x800/D9A441/16233F?text=Bijoux","https://placehold.co/600x800/B8842A/16233F?text=Vue+2"], sizes:["Taille unique"], colors:["#D9A441","#16233F","#B8432E"], badge:"promo", oldPrice: 9000, popularity: 80, rating:4.6, desc:"Parure de perles artisanales, faite main, pour sublimer toutes vos tenues traditionnelles ou modernes." },
 ];
@@ -164,7 +164,7 @@ function renderFeaturedProducts(){
 /* --------------------------------------------------------------------------
    7. PAGE CATALOGUE — filtres + tri + pagination
    -------------------------------------------------------------------------- */
-const CATALOG_STATE = { category: [], maxPrice: 50000, sort: "popularity", page: 1, perPage: 8 };
+const CATALOG_STATE = { category: [], maxPrice: 15000, sort: "popularity", page: 1, perPage: 8 };
 
 function initCatalogPage(){
   const grid = document.getElementById("catalogGrid");
@@ -204,10 +204,10 @@ function initCatalogPage(){
   if (resetBtn){
     resetBtn.addEventListener("click", () => {
       CATALOG_STATE.category = [];
-      CATALOG_STATE.maxPrice = 50000;
+      CATALOG_STATE.maxPrice = 15000;
       CATALOG_STATE.page = 1;
       document.querySelectorAll(".filter-category").forEach(cb => cb.checked = false);
-      if (priceRange){ priceRange.value = 50000; document.getElementById("priceRangeValue").textContent = formatPrice(50000); }
+      if (priceRange){ priceRange.value = 15000; document.getElementById("priceRangeValue").textContent = formatPrice(15000); }
       renderCatalog();
     });
   }
